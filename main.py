@@ -22,7 +22,7 @@ async def create_upload_files(file: UploadFile):
     ocr_unique_texts = set()    # 중복 체크
 
     # preprocess
-    prepreprocess_text()
+    content = prepreprocess_text(content)
 
     # ocr
     get_ocr_result(content, ocr_texts, ocr_unique_texts, ocr_en_model)  # en
