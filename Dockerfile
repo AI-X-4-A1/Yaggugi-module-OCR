@@ -21,6 +21,6 @@ RUN pip install --no-cache-dir -r requirements.txt
 # 나머지 파일을 복사
 COPY . .
 
-EXPOSE 8081
+EXPOSE 8012
 
-RUN ["uvicorn", "main:app", "--host", "0.0.0.0", "--port", "8081"]
+CMD ["uvicorn", "main:app", "--host", "0.0.0.0", "--port", "8012"]
