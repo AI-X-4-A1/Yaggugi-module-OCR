@@ -1,8 +1,8 @@
 from typing import List
 from fastapi import FastAPI, File, UploadFile
 from fastapi.responses import HTMLResponse
-from paddleocr import PaddleOCR, draw_ocr  # main OCR dependencies
-from utils import *
+from paddleocr.paddleocr import PaddleOCR, draw_ocr  # main OCR dependencies
+from paddleocr.utils import *
 
 import os
 
