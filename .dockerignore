@@ -1,5 +1,5 @@
 __pycache__
 
-.gitignore
-README.md
-sample03.jpg
+paddleocr/.gitignore
+paddleocr/README.md
+paddleocr/sample03.jpg

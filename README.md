@@ -1,4 +1,4 @@
-# 약국이 | Yaggugi - LLM
+# 약국이 | Yaggugi - OCR
 ![Python](https://img.shields.io/badge/Python-v3.12.7-3776AB?style=for-the-badge&logo=python&logoColor=white)
 ![PyTorch](https://img.shields.io/badge/PyTorch-v2.5.1-EE4C2C?style=for-the-badge&logo=pytorch&logoColor=white)
 ![FastAPI](https://img.shields.io/badge/FastAPI-v0.115.4-009688?style=for-the-badge&logo=fastapi&logoColor=white)
@@ -23,20 +23,26 @@ docker run -d -p 8012:8012 --name yaggugi-module-ocr yaggugi-module-ocr
 
 <!-- 테스트방법 -->
 
-# curl -X POST "http://127.0.0.1:8012/ocr" -H "Content-Type: application/x-www-form-urlencoded" -d "text=성인 남성에게 좋은 영양제는 뭐가 있니"
+curl -X "POST" \
+  "http://127.0.0.1:8012/ocr" \
+  -H "accept: application/json" \
+  -H "Content-Type: multipart/form-data" \
+  -F "file=@{{ 이미지 경로 }};type=image/jpeg"
 
 ```
 
 ## 🩺 **Feature**
 + 영양제 이미지 OCR
-  + OCR모델(![Paddle OCR](https://github.com/PaddlePaddle/PaddleOCR))
+  + OCR모델([Paddle OCR](https://github.com/PaddlePaddle/PaddleOCR))
 
 ## 🩺 **Folder Structure**
 
 ```bash
-my_fastapi_app/
+Yaggugi-module-OCR/
 ├── main.py               # FastAPI 애플리케이션 코드
 ├── requirements.txt      # 필요한 패키지 목록
+├── paddleocr             # paddle OCR 코드
+├── .dockerignore         # Docker 설정 파일 제외 목록
 └── Dockerfile            # Docker 설정 파일
 ```
 
